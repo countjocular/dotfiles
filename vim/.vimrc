@@ -29,6 +29,7 @@ NeoBundle 'skammer/vim-css-color'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'mhinz/vim-startify'
+NeoBundle 'terryma/vim-multiple-cursors'
 
 filetype plugin indent on
 
