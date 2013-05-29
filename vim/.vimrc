@@ -30,6 +30,7 @@ NeoBundle 'groenewege/vim-less'
 NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'mhinz/vim-startify'
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'dahu/LearnVim'
 
 filetype plugin indent on
 
