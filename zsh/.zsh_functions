@@ -1,0 +1,43 @@
+# Prints braces
+left_brace() {
+  echo -e '\u2772 '
+}
+right_brace() {
+  echo -e ' \u2773'
+}
+hdash() {
+  echo -e '\u2015'
+}
+
+east_arrow() {
+  echo -e '\u27B2'
+}
+
+rightwards_wave_arrow() {
+  echo -e '\u219D'
+}
+
+box_heavy_right() {
+  echo -e '\u257C'
+
+}
+
+multimap() {
+  echo -e '\u22B8'
+}
+
+hard_right_arrow() { #Only in patched fonts
+  echo -e '⮀'
+}
+
+hard_left_arrow() { #Only in patched fonts
+  echo -e '⮂'
+}
+
+branch_symbol() { # Only in patched fonts
+  echo -e '\u2b60'
+}
+
+padlock_symbol() { # Only in patched fonts
+  echo -e '\u2b64'
+}
