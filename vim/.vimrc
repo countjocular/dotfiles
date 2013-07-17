@@ -19,10 +19,12 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'Lokaltog/vim-powerline'
+"NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'maciakl/vim-neatstatus'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'airblade/vim-gitgutter'
+"NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'mhinz/vim-signify'
 NeoBundle 'skalnik/vim-vroom'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'skammer/vim-css-color'
@@ -31,6 +33,7 @@ NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'mhinz/vim-startify'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'dahu/LearnVim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 filetype plugin indent on
 
@@ -58,6 +61,15 @@ set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 " Formatting (some of these are for coding in C and C++)
 set ts=2  " Tabs are 2 spaces
 set bs=2  " Backspace over everything in insert mode
+
+" Indent guides plugin
+set sw=2 et
+let g:indent_guides_start_level = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+
 set nocp incsearch
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
@@ -127,7 +139,7 @@ set formatoptions=qrn1
 set colorcolumn=85
 
 set list
-set listchars=tab:▸\ ,eol:¬,trail:~,extends:>,precedes:<
+set listchars=tab:➟\ ,eol:⤦,trail:~,extends:>,precedes:<
 
 " Disable arrow keys
 nnoremap <up> <nop>
