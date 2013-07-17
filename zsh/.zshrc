@@ -70,6 +70,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# Import any config settings specific to this machine
-source ~/.zsh_local
+[ -s "/home/johnnie/.scm_breeze/scm_breeze.sh" ] && source "/home/johnnie/.scm_breeze/scm_breeze.sh"
 
+# Import any settings local to this machine
+source $HOME/.zsh_local
