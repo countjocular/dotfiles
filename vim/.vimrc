@@ -20,7 +20,8 @@ NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'maciakl/vim-neatstatus'
+"NeoBundle 'maciakl/vim-neatstatus'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'Valloric/YouCompleteMe'
 "NeoBundle 'airblade/vim-gitgutter'
@@ -69,6 +70,18 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+
+" Airline status line plugin
+let g:airline_powerline_fonts=1
+let g:airline_linecolumn_prefix = '␊ '
+let g:airline_fugitive_prefix = '⎇ '
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_fugitive_prefix = '⭠'
+let g:airline_readonly_symbol = '⭤'
+let g:airline_linecolumn_prefix = '⭡'
 
 set nocp incsearch
 set cinoptions=:0,p0,t0
