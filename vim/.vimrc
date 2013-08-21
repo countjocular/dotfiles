@@ -23,7 +23,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'maciakl/vim-neatstatus'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-rails'
-NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'Valloric/YouCompleteMe', { 'build': { 'linux': './install.sh' } }
 "NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'skalnik/vim-vroom'
