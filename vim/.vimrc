@@ -74,12 +74,11 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 " Airline status line plugin
 let g:airline_powerline_fonts=1
 let g:airline_linecolumn_prefix = '␊ '
-let g:airline_fugitive_prefix = '⎇ '
 let g:airline_left_sep = '⮀'
 let g:airline_left_alt_sep = '⮁'
 let g:airline_right_sep = '⮂'
 let g:airline_right_alt_sep = '⮃'
-let g:airline_fugitive_prefix = '⭠'
+let g:airline_branch_prefix = '⭠'
 let g:airline_readonly_symbol = '⭤'
 let g:airline_linecolumn_prefix = '⭡'
 
@@ -220,3 +219,5 @@ map rs :InterruptVimTmuxRunner
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
+
+NeoBundleCheck
