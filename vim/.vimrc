@@ -23,7 +23,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'maciakl/vim-neatstatus'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-rails'
-NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'Valloric/YouCompleteMe', { 'build': { 'linux': './install.sh' } }
 "NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'skalnik/vim-vroom'
@@ -50,18 +50,30 @@ let g:rails_default_file='config/database.yml'
 
 syntax enable
 
+set encoding=utf8
 set cf  " Enable error files & error jumping.
 set clipboard+=unnamed  " Yanks go on clipboard instead.
 set history=256  " Number of things to remember in history.
 set autowrite  " Writes on make/shell commands
 set ruler  " Ruler on
-set nu  " Line numbers on
+set number  " Line numbers on
 "set nowrap  " Line wrapping off
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
+set so=14 " Keep cursor away from edges of screen.
 
 " Formatting (some of these are for coding in C and C++)
 set ts=2  " Tabs are 2 spaces
 set bs=2  " Backspace over everything in insert mode
+
+" Highlight cursor line
+" Credit - http://dysfunctionalprogramming.co.uk/blog/2013/08/15/fight-with-tools/
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorcolumn
+  au WinLeave * setlocal nocursorline
+  au WinLeave * setlocal nocursorcolumn
+augroup END
 
 " Indent guides plugin
 set sw=2 et
@@ -111,15 +123,14 @@ set laststatus=2  " Always show status line.
 " gvim specific
 set mousehide  " Hide mouse after chars typed
 set mouse=a  " Mouse in all modes
+set ttymouse=xterm2 " Allow resizing of tmux splits with mouse
 set showbreak=↪ " Prettier wrapped line breaks
 
 " Use solarized color scheme
-"color desert
-"if $COLORTERM == 'mate-terminal' || $COLORTERM == 'gnome-terminal'
-  set background=dark
-  let g:solarized_termtrans=1
-  let g:solarized_visibility="high"
-  colorscheme solarized
+set background=dark
+let g:solarized_termtrans=1
+let g:solarized_visibility="high"
+colorscheme solarized
 "endif
 
 call togglebg#map("F6")
