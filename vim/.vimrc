@@ -13,10 +13,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'vim-scripts/chordpro.vim'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'myusuf3/numbers.vim'
-NeoBundle 'MarcWeber/vim-addon-mw-utils'      " Requirement for snipmate
-NeoBundle 'tomtom/tlib_vim'                   " Requirement for snipmate
 NeoBundle 'honza/vim-snippets'
-NeoBundle 'garbas/vim-snipmate'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'Lokaltog/vim-powerline'
@@ -219,13 +218,30 @@ map rx :CloseVimTmuxPanes
 " Interrupt any command running in the runner pane
 map rs :InterruptVimTmuxRunner
 
-" snipmate
-" :imap <C-Tab> <Plug>snipMateNextOrTrigger
-" :smap <C-Tab> <Plug>snipMateNextOrTrigger
+" Neocomplcache
+let g:neocomplcache_temporary_dir = $HOME . "/.vim/tmp/neocomplcache"
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_max_list = 12
 
-"let g:snips_trigger_key='<c-space>'
-:imap <c-space> <Plug>snipMateNextOrTrigger
-:smap <c-space> <Plug>snipMateNextOrTrigger
+if !exists('g:neocomplcache_keyword_paterns')
+  let g:neocomplcache_keyword_paterns = {}
+endif
+
+" Close popup with 'Enter'
+inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup()."\<CR>" : "\<CR>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+
+" Neosnippet
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)"
+      \: "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)"
+      \: "\<TAB>"
+let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Rspec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
