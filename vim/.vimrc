@@ -49,14 +49,18 @@ let g:rails_default_file='config/database.yml'
 
 syntax enable
 
-set encoding=utf8
+set encoding=utf-8
+set fileencoding=utf-8
+scriptencoding utf-8
+set fileformats=unix,dos,mac
+
 set cf  " Enable error files & error jumping.
 set clipboard+=unnamed  " Yanks go on clipboard instead.
 set history=256  " Number of things to remember in history.
 set autowrite  " Writes on make/shell commands
 set ruler  " Ruler on
 set number  " Line numbers on
-"set nowrap  " Line wrapping off
+set wrap " Line wrappping on
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 set so=14 " Keep cursor away from edges of screen.
 
@@ -95,6 +99,7 @@ let g:airline_readonly_symbol = '⭤'
 let g:airline_linecolumn_prefix = '⭡'
 
 set nocp incsearch
+set wrapscan
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
 set formatoptions=tcqr
@@ -109,6 +114,7 @@ set shiftwidth=2
 set shiftround
 " always set autoindenting on
 set autoindent
+
 " copy the previous indentation on autoindenting
 set copyindent
 " insert tabs on the start of a line according to shiftwidth, not tabstop
@@ -129,9 +135,12 @@ set showbreak=↪ " Prettier wrapped line breaks
 " Use solarized color scheme
 set background=dark
 let g:solarized_termtrans=1
+let g:solarized_termcolors=256
 let g:solarized_visibility="high"
-colorscheme solarized
-"endif
+try
+  colorscheme solarized
+catch
+endtry
 
 call togglebg#map("F6")
 
@@ -224,10 +233,17 @@ let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_max_list = 12
+let g:neocomplcache_enable_underbar_completion = 1
 
 if !exists('g:neocomplcache_keyword_paterns')
   let g:neocomplcache_keyword_paterns = {}
 endif
+let g:neocomplcache_keyword_paterns._ = '\h\w*'
+
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Close popup with 'Enter'
 inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup()."\<CR>" : "\<CR>"
@@ -235,12 +251,14 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 
 " Neosnippet
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
 imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: "\<TAB>"
+    \ "\<Plug>(neosnippet_expand_or_jump)"
+    \: pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: "\<TAB>"
+    \ "\<Plug>(neosnippet_expand_or_jump)"
+    \: "\<TAB>"
+
 let g:neosnippet#enable_snipmate_compatibility = 1
 
 " Rspec.vim mappings
