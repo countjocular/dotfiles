@@ -34,6 +34,7 @@ NeoBundle 'mhinz/vim-startify'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'dahu/LearnVim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'tomtom/tcomment_vim'
 
 filetype plugin indent on
 
@@ -265,3 +266,10 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
+
+" Auto-reload vimrc
+augroup reload_vimrc " {
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+  augroup END " }
+
