@@ -86,18 +86,6 @@ let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
-" Airline status line plugin
-let g:airline_powerline_fonts=1
-let g:airline_linecolumn_prefix = '␊ '
-let g:airline_fugitive_prefix = '⎇ '
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_fugitive_prefix = '⭠'
-let g:airline_readonly_symbol = '⭤'
-let g:airline_linecolumn_prefix = '⭡'
-
 set nocp incsearch
 set wrapscan
 set cinoptions=:0,p0,t0
@@ -323,6 +311,8 @@ endfunction
 function! MyMode()
   return winwidth('.') > 60 ? lightline#mode() : ''
 endfunction
+
+NeoBundleCheck
 
 " Auto-reload vimrc
 augroup reload_vimrc " {
