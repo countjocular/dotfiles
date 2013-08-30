@@ -34,6 +34,8 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'dahu/LearnVim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-haml'
 
 filetype plugin indent on
 
