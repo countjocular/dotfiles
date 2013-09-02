@@ -29,3 +29,4 @@ alias fox2='firefox -p -no-remote'
 alias igrep='grep -i'
 alias df='df -H'
 alias ffs='sudo' # Thanks, Dave Ingram (https://twitter.com/dmi/status/314330241264930816)
+alias bd='. bd -s'
