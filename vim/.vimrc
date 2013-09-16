@@ -27,15 +27,12 @@ NeoBundle 'mhinz/vim-signify'
 NeoBundle 'skalnik/vim-vroom'
 NeoBundle 'hail2u/vim-css3-syntax'
 "NeoBundle 'skammer/vim-css-color'
-NeoBundle 'groenewege/vim-less'
-NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'mhinz/vim-startify'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'dahu/LearnVim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-haml'
+NeoBundle 'sheerun/vim-polyglot'
 
 filetype plugin indent on
 
