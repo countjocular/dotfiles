@@ -50,8 +50,6 @@ source $HOME/.zsh_aliases
 # Source functions
 source $HOME/.zsh_functions
 
-# Customize to your needs...
-export PATH=/home/countjocular/.rvm/gems/ruby-1.9.2-p0@rails3tutorial/bin:/home/countjocular/.rvm/gems/ruby-1.9.2-p0@global/bin:/home/countjocular/.rvm/rubies/ruby-1.9.2-p0/bin:/home/countjocular/.rvm/bin:/var/lib/gems/1.9.0/bin:/home/countjocular/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 export EDITOR=vim
 
@@ -60,12 +58,11 @@ export EDITOR=vim
 # Let tmux grab the working directory
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
-# Finally, RVM stuff
-export PATH=/var/lib/gems/1.9.0/bin:$PATH
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export PATH=$PATH:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
