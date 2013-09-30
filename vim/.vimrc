@@ -33,6 +33,7 @@ NeoBundle 'dahu/LearnVim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'sheerun/vim-polyglot'
+NeoBundle 'w0ng/vim-hybrid'
 
 filetype plugin indent on
 
@@ -120,14 +121,18 @@ set ttymouse=xterm2 " Allow resizing of tmux splits with mouse
 set showbreak=↪ " Prettier wrapped line breaks
 
 " Use solarized color scheme
-set background=dark
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_visibility="high"
-try
-  colorscheme solarized
-catch
-endtry
+" set background=dark
+" let g:solarized_termtrans=1
+" let g:solarized_termcolors=256
+" let g:solarized_visibility="high"
+" try
+  " colorscheme solarized
+" catch
+" endtry
+
+" Use hybrid color scheme
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
 
 call togglebg#map("F6")
 
