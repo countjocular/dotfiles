@@ -15,13 +15,11 @@ NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'myusuf3/numbers.vim'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-rails'
-NeoBundle 'Valloric/YouCompleteMe', { 'build': { 'linux': './install.sh' } }
 "NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'skalnik/vim-vroom'
@@ -34,6 +32,7 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'Shougo/neocomplete.vim'
 
 filetype plugin indent on
 
@@ -219,27 +218,40 @@ map rx :CloseVimTmuxPanes
 " Interrupt any command running in the runner pane
 map rs :InterruptVimTmuxRunner
 
-" Neocomplcache
-let g:neocomplcache_temporary_dir = $HOME . "/.vim/tmp/neocomplcache"
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_max_list = 12
-let g:neocomplcache_enable_underbar_completion = 1
-
-if !exists('g:neocomplcache_keyword_paterns')
-  let g:neocomplcache_keyword_paterns = {}
+" Neocomplete
+" Disable AutoComplPop
+let g:acp_enableAtStartup = 0
+" Use neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+if !exists('g:neocomplete#keyword_patterns')
+  let g:neocomplete#keyword_patterns = {}
 endif
-let g:neocomplcache_keyword_paterns._ = '\h\w*'
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#smart_close_popup() . "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
 
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Close popup with 'Enter'
-inoremap <expr><CR> pumvisible() ? neocomplcache#close_popup()."\<CR>" : "\<CR>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
 
 " Neosnippet
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
