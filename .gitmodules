@@ -1,6 +1,6 @@
 [submodule "zsh/antigen"]
 	path = zsh/antigen
-	url = https://github.com/zsh-users/antigen.git
+	url = git@github.com:zsh-users/antigen.git
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git@github.com:countjocular/oh-my-zsh.git
