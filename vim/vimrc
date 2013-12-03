@@ -34,6 +34,7 @@ NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'tommcdo/vim-lion'
 
 filetype plugin indent on
 
