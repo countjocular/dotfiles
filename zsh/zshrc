@@ -17,7 +17,6 @@ antigen-bundle rails
 antigen-bundle rails3
 antigen-bundle rake
 antigen-bundle ruby
-antigen-bundle rvm
 antigen-bundle zsh-users/zsh-syntax-highlighting
 antigen-bundle colored-man
 antigen-theme countjocular_fat
@@ -59,14 +58,15 @@ export EDITOR=vim
 # Let tmux grab the working directory
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 export PATH=$PATH:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh 
+chruby ruby-2.0
 
 [ -s "/$HOME/.scm_breeze/scm_breeze.sh" ] && source "/$HOME/.scm_breeze/scm_breeze.sh"
 
