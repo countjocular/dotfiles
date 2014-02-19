@@ -36,6 +36,7 @@ NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'tommcdo/vim-lion'
 NeoBundle 'ntpeters/vim-better-whitespace'
+NeoBundle 'majutsushi/tagbar'
 
 filetype plugin indent on
 
@@ -43,8 +44,8 @@ filetype plugin indent on
 set viminfo^=!
 
 " alt+n or alt+p to navigate between entries in QuickFix
-" map   :cp 
-" map   :cn 
+" map   :cp
+" map   :cn
 
 " Change which file opens after executing :Rails command
 let g:rails_default_file='config/database.yml'
