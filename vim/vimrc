@@ -37,6 +37,7 @@ NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'tommcdo/vim-lion'
 NeoBundle 'ntpeters/vim-better-whitespace'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'laurentgoudet/vim-howdoi'
 
 filetype plugin indent on
 
