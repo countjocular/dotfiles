@@ -274,6 +274,9 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 
+" Tagbar
+nnoremap <silent> <F9> :TagbarOpenAutoClose<CR>
+
 " Lightline
 let g:lightline = {
       \ 'colorscheme': 'solarized',
