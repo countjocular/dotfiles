@@ -34,6 +34,11 @@ antigen-apply
 # Uncomment following line if you want to disable autosetting terminal title.
 # export DISABLE_AUTO_TITLE="true"
 
+# Base16 Shell
+BASE16_SCHEME="tomorrow"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+
 # Force terminal to use 256 colors, if it can
 export TERM="xterm-256color"
 

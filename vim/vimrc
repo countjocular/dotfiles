@@ -31,10 +31,11 @@ NeoBundle 'dahu/LearnVim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'sheerun/vim-polyglot'
-NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'tommcdo/vim-lion'
+NeoBundle 'mustache/vim-mustache-handlebars'
+NeoBundle 'chriskempson/base16-vim'
 
 filetype plugin indent on
 
@@ -121,24 +122,14 @@ set mouse=a  " Mouse in all modes
 set ttymouse=xterm2 " Allow resizing of tmux splits with mouse
 set showbreak=↪ " Prettier wrapped line breaks
 
-" Use solarized color scheme
-" set background=dark
-" let g:solarized_termtrans=1
-" let g:solarized_termcolors=256
-" let g:solarized_visibility="high"
-" try
-  " colorscheme solarized
-" catch
-" endtry
-
-" Use hybrid color scheme
-let g:hybrid_use_Xresources = 1
-colorscheme hybrid
+"let base16colorspace=256 "Access colors present in 256 colorspace
+set background=dark
+colorscheme base16-tomorrow
 
 call togglebg#map("F6")
 
 " Use 256 color mode
-set t_Co=256
+" set t_Co=256
 
 " Backups & Files
 set backup                   " Enable creation of backup file.
