@@ -73,7 +73,15 @@ source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh 
 chruby ruby-2.0
 
+# Source autojump
+. /usr/share/autojump/autojump.sh
+
 [ -s "/$HOME/.scm_breeze/scm_breeze.sh" ] && source "/$HOME/.scm_breeze/scm_breeze.sh"
+
+# Set Base16 Shell colors
+BASE16_SCHEME="tomorrow"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # Import any settings local to this machine
 source $HOME/.zsh_local

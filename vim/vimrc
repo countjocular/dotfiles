@@ -36,6 +36,9 @@ NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'tommcdo/vim-lion'
 NeoBundle 'mustache/vim-mustache-handlebars'
 NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'ntpeters/vim-better-whitespace'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'laurentgoudet/vim-howdoi'
 
 filetype plugin indent on
 
@@ -43,8 +46,8 @@ filetype plugin indent on
 set viminfo^=!
 
 " alt+n or alt+p to navigate between entries in QuickFix
-" map   :cp 
-" map   :cn 
+" map   :cp
+" map   :cn
 
 " Change which file opens after executing :Rails command
 let g:rails_default_file='config/database.yml'
@@ -85,8 +88,8 @@ set sw=2 et
 let g:indent_guides_start_level = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=233
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
 
 set nocp incsearch
 set wrapscan
@@ -122,14 +125,24 @@ set mouse=a  " Mouse in all modes
 set ttymouse=xterm2 " Allow resizing of tmux splits with mouse
 set showbreak=↪ " Prettier wrapped line breaks
 
-"let base16colorspace=256 "Access colors present in 256 colorspace
-set background=dark
-colorscheme base16-tomorrow
+" Use solarized color scheme
+" set background=dark
+" let g:solarized_termtrans=1
+" let g:solarized_termcolors=256
+" let g:solarized_visibility="high"
+" try
+  " colorscheme solarized
+" catch
+" endtry
+
+" Use hybrid color scheme
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
 
 call togglebg#map("F6")
 
 " Use 256 color mode
-" set t_Co=256
+set t_Co=256
 
 " Backups & Files
 set backup                   " Enable creation of backup file.
@@ -262,6 +275,9 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
+
+" Tagbar
+nnoremap <silent> <F9> :TagbarOpenAutoClose<CR>
 
 " Lightline
 let g:lightline = {
