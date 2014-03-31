@@ -45,9 +45,9 @@ export TERM="xterm-256color"
 COMPLETION_WAITING_DOTS="true"
 
 # don't put duplicate lines in the history. See bash(1) for more options
-export HISTCONTROL=ignoredups
-# ... and ignore same sucessive entries.
-export HISTCONTROL=ignoreboth
+# Lines which begin with a space character are no saved in the history list
+# All previous lines matching the current line will be removed from history
+export HISTCONTROL=ignoredups:ignorespace:erasedups
 
 # Source aliases
 source $HOME/.zsh_aliases
