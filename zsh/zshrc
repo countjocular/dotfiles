@@ -40,7 +40,9 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # Force terminal to use 256 colors, if it can
-export TERM="xterm-256color"
+# Credit: http://www.reddit.com/r/vim/comments/21fo9c/ask_unable_to_set_256_colors_theme_terminal_is/cgd50qm
+export TERM=xterm-256color
+[[ -n $TMUX ]] && export TERM=screen-256color
 
 COMPLETION_WAITING_DOTS="true"
 
@@ -68,10 +70,10 @@ export PATH=$PATH:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/s
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh 
-chruby ruby-2.0
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+rbenv shell 2.1.1
 
 # Source autojump
 . /usr/share/autojump/autojump.sh

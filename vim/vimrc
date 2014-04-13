@@ -16,7 +16,6 @@ NeoBundle 'myusuf3/numbers.vim'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-rails'
@@ -39,6 +38,8 @@ NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'ntpeters/vim-better-whitespace'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'laurentgoudet/vim-howdoi'
+NeoBundle 'chriskempson/base16-vim'
+NeoBundle 'godlygeek/csapprox'
 
 filetype plugin indent on
 
@@ -125,21 +126,10 @@ set mouse=a  " Mouse in all modes
 set ttymouse=xterm2 " Allow resizing of tmux splits with mouse
 set showbreak=↪ " Prettier wrapped line breaks
 
-" Use solarized color scheme
-" set background=dark
-" let g:solarized_termtrans=1
-" let g:solarized_termcolors=256
-" let g:solarized_visibility="high"
-" try
-  " colorscheme solarized
-" catch
-" endtry
+set background=dark
 
-" Use hybrid color scheme
-let g:hybrid_use_Xresources = 1
-colorscheme hybrid
-
-call togglebg#map("F6")
+let base16colorspace=256
+colorscheme base16-tomorrow
 
 " Use 256 color mode
 set t_Co=256
