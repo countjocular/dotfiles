@@ -36,7 +36,7 @@ antigen-apply
 
 # Force terminal to use 256 colors, if it can
 # Credit: http://www.reddit.com/r/vim/comments/21fo9c/ask_unable_to_set_256_colors_theme_terminal_is/cgd50qm
-TERM=xterm-256color
+export TERM=xterm-256color
 [[ -n $TMUX ]] && export TERM=screen-256color
 
 COMPLETION_WAITING_DOTS="true"
