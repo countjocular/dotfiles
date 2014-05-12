@@ -268,7 +268,7 @@ map <Leader>l :call RunLastSpec()<CR>
 " Tagbar
 nnoremap <silent> <F9> :TagbarOpenAutoClose<CR>
 
-# Paste without automatic indentation
+" Paste without automatic indentation
 set pastetoggle=<F2>
 
 " Lightline
