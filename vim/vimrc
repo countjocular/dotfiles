@@ -40,6 +40,7 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'laurentgoudet/vim-howdoi'
 NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'godlygeek/csapprox'
+NeoBundle 'tpope/vim-endwise'
 
 filetype plugin indent on
 
@@ -268,6 +269,9 @@ map <Leader>l :call RunLastSpec()<CR>
 
 " Tagbar
 nnoremap <silent> <F9> :TagbarOpenAutoClose<CR>
+
+" Paste without automatic indentation
+set pastetoggle=<F2>
 
 " Lightline
 let g:lightline = {

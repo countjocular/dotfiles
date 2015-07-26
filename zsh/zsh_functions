@@ -62,3 +62,5 @@ function explain {
   # opens url in browser
   xdg-open $url
 }
+
+function gi() { curl http://www.gitignore.io/api/$@ ;}
