@@ -65,7 +65,7 @@ export EDITOR=vim
 # Let tmux grab the working directory
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
-export PATH=$PATH:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=$PATH:$HOME/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/sbin:/bin:/usr/games
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -76,7 +76,7 @@ eval "$(rbenv init -)"
 rbenv shell 2.1.1
 
 # Source autojump
-. /usr/share/autojump/autojump.sh
+#. /usr/bin/autojump
 
 [ -s "/$HOME/.scm_breeze/scm_breeze.sh" ] && source "/$HOME/.scm_breeze/scm_breeze.sh"
 
@@ -87,3 +87,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 
 # Import any settings local to this machine
 source $HOME/.zsh_local
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Temporary fix for "GREP_OPTIONS is deprecated" warning.
+# See https://github.com/robbyrussell/oh-my-zsh/pull/3341
+alias grep="grep ${GREP_OPTIONS}"
+unset GREP_OPTIONS
