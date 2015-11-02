@@ -64,3 +64,5 @@ function explain {
 }
 
 function gi() { curl http://www.gitignore.io/api/$@ ;}
+
+mkcd() { test -d "$1" || mkdir "$1" && cd "$1" }
