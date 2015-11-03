@@ -14,7 +14,6 @@ antigen-bundle command-not-found
 antigen-bundle gem
 antigen-bundle git-flow
 antigen-bundle rails
-antigen-bundle rails3
 antigen-bundle rake
 antigen-bundle ruby
 antigen-bundle zsh-users/zsh-syntax-highlighting
