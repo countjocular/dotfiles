@@ -53,6 +53,7 @@ NeoBundle 'chriskempson/base16-vim'
 NeoBundle 'godlygeek/csapprox'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'ryanoasis/vim-devicons'
+NeoBundle 'haya14busa/incsearch.vim'
 
 call neobundle#end()
 
@@ -268,6 +269,11 @@ map <Leader>l :call RunLastSpec()<CR>
 
 " Tagbar
 nnoremap <silent> <F9> :TagbarOpenAutoClose<CR>
+
+" incsearch
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 " Paste without automatic indentation
 set pastetoggle=<F2>
