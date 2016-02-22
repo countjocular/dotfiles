@@ -78,7 +78,11 @@ let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=233
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
 
-set nocp incsearch
+" Searching
+set nocp incsearch   " Highlight current search
+set ignorecase       " Ignore case when searching ...
+set smartcase        " ... unless search includes upper-case characters
+
 set wrapscan
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
