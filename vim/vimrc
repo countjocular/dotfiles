@@ -21,14 +21,14 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
 call neobundle#end()
 
 " Required:
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 
 " Add recently accessed projects menu (project plugin)
 set viminfo^=!
@@ -315,8 +315,6 @@ endfunction
 function! MyMode()
   return winwidth('.') > 60 ? lightline#mode() : ''
 endfunction
-
-NeoBundleCheck
 
 " Auto-reload vimrc
 augroup reload_vimrc " {
