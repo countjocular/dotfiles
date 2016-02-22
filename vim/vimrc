@@ -40,7 +40,6 @@ set viminfo^=!
 " Change which file opens after executing :Rails command
 let g:rails_default_file='config/database.yml'
 
-syntax enable
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -110,16 +109,16 @@ set laststatus=2  " Always show status line.
 " gvim specific
 set mousehide  " Hide mouse after chars typed
 set mouse=a  " Mouse in all modes
-set ttymouse=xterm2 " Allow resizing of tmux splits with mouse
+"set ttymouse=xterm2 " Allow resizing of tmux splits with mouse
 set showbreak=↪ " Prettier wrapped line breaks
 
+syntax enable
 set background=dark
-
-let base16colorspace=256
-colorscheme base16-tomorrow
 
 " Use 256 color mode
 set t_Co=256
+"let base16colorspace=256
+colorscheme gruvbox
 
 " Backups & Files
 set backup                   " Enable creation of backup file.

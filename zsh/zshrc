@@ -32,10 +32,13 @@ antigen-apply
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # export DISABLE_AUTO_TITLE="true"
+#
+export VISUAL=vim
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Base16 Shell
-BASE16_SCHEME="tomorrow"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+BASE16_SCHEME="chalk"
+BASE16_SHELL="$HOME/dotfiles/zsh/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # Force terminal to use 256 colors, if it can
@@ -85,11 +88,6 @@ alias pma="pm add"
 alias pmg="pm go"
 alias pmrm="pm remove"
 alias pml="pm list"
-
-# Set Base16 Shell colors
-BASE16_SCHEME="tomorrow"
-BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # Import any settings local to this machine
 source $HOME/.zsh_local
