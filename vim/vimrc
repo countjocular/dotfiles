@@ -60,6 +60,10 @@ set so=14 " Keep cursor away from edges of screen.
 set ts=2  " Tabs are 2 spaces
 set bs=2  " Backspace over everything in insert mode
 
+" Persistent undo
+set undofile
+set undodir=~/.vim/undodir
+
 " Highlight cursor line
 " Credit - http://dysfunctionalprogramming.co.uk/blog/2013/08/15/fight-with-tools/
 augroup CursorLine
@@ -171,8 +175,8 @@ au FocusLost * :wa
 " Make jj act as ESC
 inoremap jj <ESC>
 
-" Make , act as Leader
-"let mapleader = ","
+" Make \ act as Leader
+"let mapleader = "\\"
 
 " \w opens new vertical split window and switches to it
 nnoremap <leader>w <C-w>v<C-w>l
@@ -270,7 +274,6 @@ let g:lightline = {
 
 " Ctrl-P
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-nmap ; :CtrlPBuffer<CR>
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0

@@ -98,3 +98,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # See https://github.com/robbyrussell/oh-my-zsh/pull/3341
 alias grep="grep ${GREP_OPTIONS}"
 unset GREP_OPTIONS
+source /usr/share/nvm/init-nvm.sh
