@@ -33,7 +33,7 @@ antigen-apply
 # Uncomment following line if you want to disable autosetting terminal title.
 # export DISABLE_AUTO_TITLE="true"
 #
-export VISUAL=vim
+export VISUAL="vim"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Base16 Shell
