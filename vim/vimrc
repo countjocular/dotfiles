@@ -30,6 +30,8 @@ call neobundle#end()
 " Required:
 filetype plugin indent on
 
+set hidden  " Allow multiple unsaved files opened in different buffers
+
 " Add recently accessed projects menu (project plugin)
 set viminfo^=!
 
