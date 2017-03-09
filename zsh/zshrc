@@ -17,7 +17,7 @@ antigen-bundle rails
 antigen-bundle rake
 antigen-bundle ruby
 antigen-bundle zsh-users/zsh-syntax-highlighting
-antigen-bundle colored-man
+antigen-bundle colored-man-pages
 antigen-theme countjocular_fat
 antigen-apply
 
