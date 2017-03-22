@@ -17,7 +17,8 @@ antigen-bundle rails
 antigen-bundle rake
 antigen-bundle ruby
 antigen-bundle zsh-users/zsh-syntax-highlighting
-antigen-bundle colored-man
+antigen-bundle colored-man-pages
+antigen-bundle archlinux
 antigen-theme countjocular_fat
 antigen-apply
 
@@ -89,13 +90,17 @@ alias pmg="pm go"
 alias pmrm="pm remove"
 alias pml="pm list"
 
-# Import any settings local to this machine
-source $HOME/.zsh_local
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# Activate thefuck
+eval "$(thefuck --alias)"
 
 # Temporary fix for "GREP_OPTIONS is deprecated" warning.
 # See https://github.com/robbyrussell/oh-my-zsh/pull/3341
 alias grep="grep ${GREP_OPTIONS}"
 unset GREP_OPTIONS
 source /usr/share/nvm/init-nvm.sh
+
+# Import any settings local to this machine
+source $HOME/.zsh_local
+
