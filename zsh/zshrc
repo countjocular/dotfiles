@@ -9,7 +9,7 @@ source $HOME/dotfiles/zsh/antigen/antigen.zsh
 export ANTIGEN_DEFAULT_REPO_URL=git@github.com:countjocular/oh-my-zsh.git
 antigen-use oh-my-zsh
 antigen-bundle git
-antigen-bundle heroku
+antigen bundle lukechilds/zsh-nvm
 antigen-bundle command-not-found
 antigen-bundle gem
 antigen-bundle git-flow
