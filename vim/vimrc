@@ -1,322 +1,81 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.local/share/nvim/plugged')
 
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
+  Plug 'tomtom/tcomment_vim'
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'morhetz/gruvbox'
+  Plug 'itchyny/lightline.vim'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'vim-syntastic/syntastic'
+  Plug 'godlygeek/tabular'
 
-   " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
+call plug#end()
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+let mapleader = ','
 
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use netrw as file browser
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" absolute width of netrw window
+let g:netrw_winsize = -28
+" tree-view
+let g:netrw_liststyle = 3
+" sort is affecting only: directories on the top, files below
+let g:netrw_sort_sequence = '[\/]$,*'
+" open file in a new tab
+let g:netrw_browse_split = 3
 
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-set hidden  " Allow multiple unsaved files opened in different buffers
-
-" Add recently accessed projects menu (project plugin)
-set viminfo^=!
-
-" alt+n or alt+p to navigate between entries in QuickFix
-" map   :cp
-" map   :cn
-
-" Change which file opens after executing :Rails command
-let g:rails_default_file='config/database.yml'
-
-
-set encoding=utf-8
-set fileencoding=utf-8
-scriptencoding utf-8
-set fileformats=unix,dos,mac
-
-set cf  " Enable error files & error jumping.
-set clipboard+=unnamed  " Yanks go on clipboard instead.
-set history=256  " Number of things to remember in history.
-set autowrite  " Writes on make/shell commands
-set ruler  " Ruler on
-set number  " Line numbers on
-set wrap " Line wrappping on
-set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
-set so=14 " Keep cursor away from edges of screen.
-
-" Formatting (some of these are for coding in C and C++)
-set ts=2  " Tabs are 2 spaces
-set bs=2  " Backspace over everything in insert mode
-
-" Persistent undo
-set undofile
-set undodir=~/.vim/undodir
-
-" Highlight cursor line
-" Credit - http://dysfunctionalprogramming.co.uk/blog/2013/08/15/fight-with-tools/
-augroup CursorLine
-  au!
-  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  au VimEnter,WinEnter,BufWinEnter * setlocal cursorcolumn
-  au WinLeave * setlocal nocursorline
-  au WinLeave * setlocal nocursorcolumn
-augroup END
-
-" Indent guides plugin
-set sw=2 et
-let g:indent_guides_start_level = 1
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_enable_on_vim_startup = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=233
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
-
-" Searching
-set nocp incsearch   " Highlight current search
-set ignorecase       " Ignore case when searching ...
-set smartcase        " ... unless search includes upper-case characters
-
-set wrapscan
-set cinoptions=:0,p0,t0
-set cinwords=if,else,while,do,for,switch,case
-set formatoptions=tcqr
-set cindent
-" when hitting <BS>, pretend like a tab is removed, even if spaces
-set softtabstop=2
-" expand tabs by default (overloadable per file type later)
-set expandtab
-" number of spaces to use for autoindenting
-set shiftwidth=2
-" use multiple of shiftwidth when indenting with '<' and '>'
-set shiftround
-" always set autoindenting on
-set autoindent
-
-" copy the previous indentation on autoindenting
-set copyindent
-" insert tabs on the start of a line according to shiftwidth, not tabstop
-set smarttab
-
-" Visual
-set showmatch  " Show matching brackets.
-set mat=5  " Bracket blinking.
-set novisualbell  " No blinking .
-set noerrorbells  " No noise.
-set laststatus=2  " Always show status line.
-" gvim specific
-set mousehide  " Hide mouse after chars typed
-set mouse=a  " Mouse in all modes
-"set ttymouse=xterm2 " Allow resizing of tmux splits with mouse
-set showbreak=↪ " Prettier wrapped line breaks
-
-syntax enable
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gruvbox
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme gruvbox
 set background=dark
 
-" Use 256 color mode
-set t_Co=256
-"let base16colorspace=256
-colorscheme gruvbox
-
-" Backups & Files
-set backup                   " Enable creation of backup file.
-set backupdir=~/.vim/backups " Where backups will go.
-set directory=~/.vim/tmp     " Where temporary files will go.
-
-" Powerline fancy symbols
-let g:Powerline_symbols = 'fancy'
-
-" Alt+arrow for split window navigation
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
-
-" Split vertical window with new window below current
-
-set splitbelow
-
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-set colorcolumn=85
-
-set list
-set listchars=tab:➟\ ,eol:⤦,trail:~,extends:>,precedes:<
-
-" Disable arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-"nnoremap j gj
-"nnoremap k gk
-
-" Make spacebar act as :
-nnoremap <Space> :
-
-" Save on losing focus
-au FocusLost * :wa
-
-" Make jj act as ESC
-inoremap jj <ESC>
-
-" Make \ act as Leader
-"let mapleader = "\\"
-
-" \w opens new vertical split window and switches to it
-nnoremap <leader>w <C-w>v<C-w>l
-
-" Ctrl + movement keys = move windows
-"nnoremap <C-h> <C-w>j
-"nnoremap <C-j> <C-w>k
-"nnoremap <C-k> <C-w>l
-"nnoremap <C-l> <C-w>;
-
-" Set movement keys to jkl; instead of hjkl
-" nnoremap k k " Up
-" nnoremap j h " Left
-" nnoremap ; l " Right
-" nnoremap l j " Down
-noremap ; l
-noremap l j
-noremap k k
-noremap j h
-
-" Prompt for a command to run
-map rp :PromptVimTmuxCommand
-" Run last command executed by RunVimTmuxCommand
-map rl :RunLastVimTmuxCommand
-" Inspect runner pane
-map ri :InspectVimTmuxRunner
-" Close all other tmux panes in current window
-map rx :CloseVimTmuxPanes
-" Interrupt any command running in the runner pane
-map rs :InterruptVimTmuxRunner
-
-" Neocomplete
-" Disable AutoComplPop
-let g:acp_enableAtStartup = 0
-" Use neocomplete
-let g:neocomplete#enable_at_startup = 1
-
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-"if !exists('g:neocomplete#sources#omni#input_patterns')
-  "let g:neocomplete#sources#omni#input_patterns = {}
-"endif
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<c-s>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" Rspec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-
-" Tagbar
-nnoremap <silent> <F9> :TagbarOpenAutoClose<CR>
-
-" incsearch
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
-" Paste without automatic indentation
-set pastetoggle=<F2>
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Lightline
-let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ 'mode_map': { 'c': 'NORMAL' },
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-      \ },
-      \ 'component_function': {
-      \   'modified': 'MyModified',
-      \   'readonly': 'MyReadonly',
-      \   'fugitive': 'MyFugitive',
-      \   'filename': 'MyFilename',
-      \   'fileformat': 'MyFileformat',
-      \   'filetype': 'MyFiletype',
-      \   'fileencoding': 'MyFileencoding',
-      \   'mode': 'MyMode',
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-      \ }
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:lightline = { 'colorscheme': 'gruvbox', }
+set laststatus=2
+set noshowmode
 
-" Ctrl-P
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_map = '<Leader>t'
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_dotfiles = 0
-let g:ctrlp_switch_buffer = 0
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
-function! MyModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Leader C for code-related mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+noremap <silent> <Leader>cc :Tcomment<CR>
+vnoremap <silent> <Leader>cee    :Tabularize /=<CR>
+vnoremap <silent> <Leader>cet    :Tabularize /#<CR>
+vnoremap <silent> <Leader>ce     :Tabularize /
 
-function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &ro ? '⭤' : ''
-endfunction
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Leader F for file-related mappîngs (open, browse...) 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <Leader>f :CtrlP<CR>
+nnoremap <silent> <Leader>fm :CtrlPMRU<CR>
 
-function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() : 
-         \  &ft == 'unite' ? unite#get_status_string() : 
-         \  &ft == 'vimshell' ? substitute(b:vimshell.current_dir,expand('~'),'~','') : 
-         \ '' != expand('%t') ? expand('%t') : '[No Name]') .
-         \ ('' != MyModified() ? ' ' . MyModified() : '')
-endfunction
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Leader B for buffer-related mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <Leader>b :CtrlPBuffer<CR> " cycle between buffer
+nnoremap <silent> <Leader>bb :bn<CR> "create (N)ew buffer
+nnoremap <silent> <Leader>bd :bdelete<CR> "(D)elete the current buffer
+nnoremap <silent> <Leader>bu :bunload<CR> "(U)nload the current buffer
+nnoremap <silent> <Leader>bl :setnomodifiable<CR> " (L)ock the current buffer"
 
-function! MyFugitive()
-  return &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head') && strlen(fugitive#head()) ? '⭠ '.fugitive#head() : ''
-endfunction
-
-function! MyFileformat()
-  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
- endfunction
-
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
-endfunction
-
-function! MyFileencoding()
-  return winwidth('.') > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
-endfunction
-
-function! MyMode()
-  return winwidth('.') > 60 ? lightline#mode() : ''
-endfunction
-
-" Auto-reload vimrc
-augroup reload_vimrc " {
-  autocmd!
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC
-  augroup END " }
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Other mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" reloads .vimrc -- making all changes active
+map <silent> <Leader>v :source ~/.vimrc<CR>:PlugInstall<CR>:bdelete<CR>:exe ":echo 'vimrc reloaded'"<CR>
