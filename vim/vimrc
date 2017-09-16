@@ -10,10 +10,37 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'editorconfig/editorconfig-vim'
   Plug 'vim-syntastic/syntastic'
   Plug 'godlygeek/tabular'
+  Plug 'Raimondi/delimitMate'
+  Plug 'myusuf3/numbers.vim'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'hail2u/vim-css3-syntax'
+  Plug 'mhinz/vim-startify'
+  Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'osyo-manga/vim-over'
+  Plug 'tpope/vim-endwise'
+  Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
 let mapleader = ','
+
+" make backspaces delete sensibly
+set backspace=indent,eol,start
+
+" autosave buffer when switching
+set autowrite
+
+" sensible display of invisible characters
+set listchars=tab:➟\ ,eol:⤦,trail:~,extends:>,precedes:<
+
+" ignore case when search pattern is all lowercase
+set smartcase
+set ignorecase
+
+" Backups & Files
+set backup                   " Enable creation of backup file.
+set backupdir=~/.vim/backups " Where backups will go.
+set directory=~/.vim/tmp     " Where temporary files will go.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use netrw as file browser
@@ -52,6 +79,16 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-indent-guides
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set sw=2 et
+let g:indent_guides_start_level = 1
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=233
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Leader C for code-related mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <silent> <Leader>cc :Tcomment<CR>
@@ -79,3 +116,16 @@ nnoremap <silent> <Leader>bl :setnomodifiable<CR> " (L)ock the current buffer"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " reloads .vimrc -- making all changes active
 map <silent> <Leader>v :source ~/.vimrc<CR>:PlugInstall<CR>:bdelete<CR>:exe ":echo 'vimrc reloaded'"<CR>
+" use 'jj' to escape insert mode
+inoremap jj <ESC>
+" Make spacebar act as :
+nnoremap <Space> :
+" Set movement keys to jkl; instead of hjkl
+noremap ; l
+noremap l j
+noremap k k
+noremap j h
+" use ':w!!' to allow sudo write, if current buffer doesn't have permission
+cmap w!! %!sudo tee > /dev/null %
+" Paste without automatic indentation
+set pastetoggle=<F2>
