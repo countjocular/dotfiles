@@ -115,7 +115,11 @@ nnoremap <silent> <Leader>bl :setnomodifiable<CR> " (L)ock the current buffer"
 " Other mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " reloads .vimrc -- making all changes active
-map <silent> <Leader>v :source ~/.vimrc<CR>:PlugInstall<CR>:bdelete<CR>:exe ":echo 'vimrc reloaded'"<CR>
+if has('nvim')
+  map <silent> <Leader>v :source ~/.config/nvim/init.vim<CR> :PlugInstall<CR>:bdelete<CR>:exe ":echo 'init.vim reloaded'"<CR>
+else
+  map <silent> <Leader>v :source ~/.vimrc<CR>:PlugInstall<CR>:bdelete<CR>:exe ":echo 'vimrc reloaded'"<CR>
+end
 " use 'jj' to escape insert mode
 inoremap jj <ESC>
 " Make spacebar act as :
