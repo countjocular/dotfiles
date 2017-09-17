@@ -34,7 +34,8 @@ set backspace=indent,eol,start
 set autowrite
 
 " sensible display of invisible characters
-set listchars=tab:➟\ ,eol:⤦,trail:~,extends:>,precedes:<
+set list
+set listchars=tab:➟\ ,eol:⤦,trail:▒,extends:>,precedes:<
 
 " ignore case when search pattern is all lowercase
 set smartcase
