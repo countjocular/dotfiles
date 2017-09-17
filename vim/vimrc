@@ -91,7 +91,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Leader C for code-related mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-noremap <silent> <Leader>cc :Tcomment<CR>
+noremap <silent> <Leader>cc :TComment<CR>
 vnoremap <silent> <Leader>cee    :Tabularize /=<CR>
 vnoremap <silent> <Leader>cet    :Tabularize /#<CR>
 vnoremap <silent> <Leader>ce     :Tabularize /
