@@ -37,6 +37,11 @@ set autowrite
 set list
 set listchars=tab:➟\ ,eol:⤦,trail:▒,extends:>,precedes:<
 
+" text wrapping and columns
+set wrap
+set textwidth=78
+set colorcolumn=80
+
 " ignore case when search pattern is all lowercase
 set smartcase
 set ignorecase
