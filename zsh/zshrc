@@ -1,8 +1,6 @@
 export LANG=en_GB.utf8
 export GDM_LANG=en_GB.utf8
 
-export ZSH=/usr/share/oh-my-zsh
-
 source /usr/share/zsh/share/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle git
@@ -19,6 +17,8 @@ antigen bundle archlinux
 antigen bundle thefuck
 antigen bundle djui/alias-tips
 antigen apply
+
+export ZSH=/usr/share/oh-my-zsh
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
