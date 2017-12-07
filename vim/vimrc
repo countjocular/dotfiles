@@ -11,7 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'itchyny/lightline.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'editorconfig/editorconfig-vim'
-  Plug 'vim-syntastic/syntastic'
+  "Plug 'vim-syntastic/syntastic'
   Plug 'godlygeek/tabular'
   Plug 'Raimondi/delimitMate'
   Plug 'myusuf3/numbers.vim'
@@ -22,6 +22,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'osyo-manga/vim-over'
   Plug 'tpope/vim-endwise'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'w0rp/ale'
 
 call plug#end()
 
