@@ -23,10 +23,17 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-endwise'
   Plug 'ryanoasis/vim-devicons'
   Plug 'w0rp/ale'
+  if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+  endif
 
 call plug#end()
 
-let mapleader = ','
+let g:mapleader = ','
 
 " make backspaces delete sensibly
 set backspace=indent,eol,start
@@ -91,12 +98,18 @@ let g:syntastic_check_on_wq = 0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-indent-guides
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-set sw=2 et
+set shiftwidth=2 et
 let g:indent_guides_start_level = 1
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=233
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Deoplete
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:deoplete#enable_at_startup = 1
+set completeopt+=noinsert
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Leader C for code-related mappings
