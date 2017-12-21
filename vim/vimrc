@@ -5,6 +5,7 @@ scriptencoding utf-8
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 
+  Plug 'wincent/terminus'
   Plug 'tomtom/tcomment_vim'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'morhetz/gruvbox'
@@ -25,6 +26,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'Chiel92/vim-autoformat'
   Plug 'w0rp/ale'
+  Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown'] }
   if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   else
