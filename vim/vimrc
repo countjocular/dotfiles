@@ -18,10 +18,12 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'hail2u/vim-css3-syntax'
   Plug 'mhinz/vim-startify'
-  Plug 'nathanaelkane/vim-indent-guides'
+  "Plug 'nathanaelkane/vim-indent-guides'
+  Plug 'thiagoalessio/rainbow_levels.vim'
   Plug 'osyo-manga/vim-over'
   Plug 'tpope/vim-endwise'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'Chiel92/vim-autoformat'
   Plug 'w0rp/ale'
   if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -44,6 +46,12 @@ set autowrite
 " sensible display of invisible characters
 set list
 set listchars=tab:➟\ ,eol:⤦,trail:▒,extends:>,precedes:<
+
+" Highlight excessively long lines
+match ErrorMsg '\%>120v.\+'
+
+" Highlight trailing whitespace
+match ErrorMsg '\s\+$'
 
 " text wrapping and columns
 set wrap
@@ -104,6 +112,21 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=233
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Rainbow Levels
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au FileType javascript,python,php,xml,yaml,ruby :RainbowLevelsOn
+let g:rainbow_levels = [
+    \{'ctermbg': 232, 'guibg': '#080808'},
+    \{'ctermbg': 233, 'guibg': '#121212'},
+    \{'ctermbg': 234, 'guibg': '#1c1c1c'},
+    \{'ctermbg': 235, 'guibg': '#262626'},
+    \{'ctermbg': 236, 'guibg': '#303030'},
+    \{'ctermbg': 237, 'guibg': '#3a3a3a'},
+    \{'ctermbg': 238, 'guibg': '#444444'},
+    \{'ctermbg': 239, 'guibg': '#4e4e4e'},
+    \{'ctermbg': 240, 'guibg': '#585858'}]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Deoplete
