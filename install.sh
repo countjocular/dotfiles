@@ -37,6 +37,11 @@ mkdir -p ~/.vim/tmp
 git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
 
 ####################
+# Node
+####################
+yaourt -S nodejs npm # Needed for vim-prettier
+
+####################
 # Ruby
 ####################
 yaourt -S ruby # SCM breeze works better with Ruby installed
