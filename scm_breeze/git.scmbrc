@@ -56,7 +56,7 @@ git_fetch_alias="gf"
 git_fetch_all_alias="gfa"
 git_fetch_and_rebase_alias="gfr"
 git_pull_alias="gl"
-git_push_alias="gps"
+git_push_alias="gp"
 git_push_force_alias="gpsf"
 git_pull_then_push_alias="gpls"
 git_status_original_alias="gst"
@@ -95,7 +95,7 @@ git_tag_alias="gt"
 # Git Keyboard Shortcuts
 # ----------------------------------------------
 # Keyboard shortcuts are on by default. Set this to 'false' to disable them.
-git_keyboard_shortcuts_enabled="true"
+git_keyboard_shortcuts_enabled="false"
 git_commit_all_keys="\C-x "        		  # CTRL+x, SPACE
 git_add_and_commit_keys="\C-xc"    		  # CTRL+x, c
 git_commit_all_with_ci_skip_keys="\C-xv"  # CTRL+x, v    (Appends [ci skip] to commit message)
