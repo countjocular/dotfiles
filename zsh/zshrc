@@ -62,11 +62,14 @@ eval "$(thefuck --alias)"
 # Load nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# Load nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
 
 # Activate OMZ
 source $ZSH/oh-my-zsh.sh
 
+# Activate fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Import any settings local to this machine
 source $HOME/.zsh_local
-
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
