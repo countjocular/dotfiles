@@ -120,7 +120,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rainbow Levels
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-au FileType javascript,python,php,xml,yaml,ruby :RainbowLevelsOn
+au FileType javascript,typescript,python,php,xml,yaml,ruby :RainbowLevelsOn
 let g:rainbow_levels = [
     \{'ctermbg': 232, 'guibg': '#080808'},
     \{'ctermbg': 233, 'guibg': '#121212'},
