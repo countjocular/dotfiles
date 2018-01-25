@@ -7,7 +7,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   Plug 'wincent/terminus'
   Plug 'tomtom/tcomment_vim'
-  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'morhetz/gruvbox'
   Plug 'itchyny/lightline.vim'
   Plug 'sheerun/vim-polyglot'
@@ -139,6 +138,11 @@ let g:rainbow_levels = [
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:deoplete#enable_at_startup = 1
 set completeopt+=noinsert
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <C-p> :FZF<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Leader C for code-related mappings
