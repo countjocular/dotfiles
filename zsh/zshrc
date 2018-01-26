@@ -18,6 +18,10 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Powerlevel9
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MODE='awesome-fontconfig'
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time history background_jobs)
 
 export VISUAL="vim"
 export EDITOR="vim"
