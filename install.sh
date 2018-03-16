@@ -12,8 +12,8 @@ sudo pacman -Syu yaourt
 ####################
 # Fonts
 ####################
-# Grab some patched fonts, for symbolic terminal sexiness
-sudo pacman -Syu awesome-terminal-fonts
+# Fira Code: monospaced font with programming ligatures
+yaourt -Syu otf-fira-code
 
 ####################
 # Vim
@@ -80,3 +80,6 @@ ln -s ~/dotfiles/scm_breeze/git.scmbrc ~/.git.scmbrc
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh/zsh_functions ~/.zsh_functions
 ln -s ~/dotfiles/zsh/zsh_aliases ~/.zsh_aliases
+
+echo "All done!"
+echo "Remember to set your terminal font to Fira Code"
