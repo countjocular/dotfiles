@@ -75,11 +75,13 @@ yaourt -S tmux tmuxinator
 ####################
 # Symlinks
 ####################
+mkdir -p ~/.config/nvim
 ln -s ~/dotfiles/vim/vimrc ~/.config/nvim/init.vim
 ln -s ~/dotfiles/scm_breeze/git.scmbrc ~/.git.scmbrc
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh/zsh_functions ~/.zsh_functions
 ln -s ~/dotfiles/zsh/zsh_aliases ~/.zsh_aliases
+touch ~/.zsh_local
 
 echo "All done!"
 echo "Remember to set your terminal font to Fira Code"
