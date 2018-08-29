@@ -39,6 +39,8 @@ COMPLETION_WAITING_DOTS="true"
 # All previous lines matching the current line will be removed from history
 export HISTCONTROL=ignoredups:ignorespace:erasedups
 
+export PATH="$PATH:$HOME/.local/bin"
+
 # Source aliases
 source $HOME/.zsh_aliases
 
@@ -67,7 +69,7 @@ eval "$(thefuck --alias)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 # Load nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Activate OMZ
 source $ZSH/oh-my-zsh.sh
