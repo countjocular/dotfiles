@@ -16,6 +16,11 @@ sudo pacman -Syu yaourt
 yaourt -Syu otf-fira-code
 
 ####################
+# Python + pip
+####################
+yaourt -Syu pip
+
+####################
 # Vim
 ####################
 # Install neovim, and replace vim with nvim
@@ -30,6 +35,13 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 mkdir -p ~/.local/share/nvim/plugged
 mkdir -p ~/.vim/backups
 mkdir -p ~/.vim/tmp
+
+####################
+# Tmux
+####################
+
+sudo pip install powerline-status
+yaourt -S tmux
 
 ####################
 # SCM breeze
@@ -81,7 +93,11 @@ ln -s ~/dotfiles/scm_breeze/git.scmbrc ~/.git.scmbrc
 ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh/zsh_functions ~/.zsh_functions
 ln -s ~/dotfiles/zsh/zsh_aliases ~/.zsh_aliases
+ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 touch ~/.zsh_local
 
 echo "All done!"
 echo "Remember to set your terminal font to Fira Code"
+echo "Remember to check the first line of tmux.conf - it should be set to"
+echo "/usr/lib/python3.7/site-packages/"
+show powerline-status | grep Location | sed 's/Location: //g'
