@@ -5,36 +5,36 @@ scriptencoding utf-8
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 
-  Plug 'wincent/terminus'
-  Plug 'tomtom/tcomment_vim'
-  Plug 'morhetz/gruvbox'
-  Plug 'itchyny/lightline.vim'
-  Plug 'sheerun/vim-polyglot'
-  Plug 'editorconfig/editorconfig-vim'
-  "Plug 'vim-syntastic/syntastic'
-  Plug 'godlygeek/tabular'
-  Plug 'Raimondi/delimitMate'
-  Plug 'myusuf3/numbers.vim'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'hail2u/vim-css3-syntax'
-  Plug 'mhinz/vim-startify'
-  "Plug 'nathanaelkane/vim-indent-guides'
-  Plug 'thiagoalessio/rainbow_levels.vim'
-  Plug 'osyo-manga/vim-over'
-  Plug 'tpope/vim-endwise'
-  Plug 'ryanoasis/vim-devicons'
-  Plug 'Chiel92/vim-autoformat'
-  Plug 'w0rp/ale'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
-  Plug 'raviqqe/vim-nonblank'
-  if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-  endif
+Plug 'wincent/terminus'
+Plug 'tomtom/tcomment_vim'
+Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'editorconfig/editorconfig-vim'
+"Plug 'vim-syntastic/syntastic'
+Plug 'godlygeek/tabular'
+Plug 'Raimondi/delimitMate'
+Plug 'myusuf3/numbers.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'mhinz/vim-startify'
+"Plug 'nathanaelkane/vim-indent-guides'
+Plug 'thiagoalessio/rainbow_levels.vim'
+Plug 'osyo-manga/vim-over'
+Plug 'tpope/vim-endwise'
+Plug 'ryanoasis/vim-devicons'
+Plug 'Chiel92/vim-autoformat'
+Plug 'w0rp/ale'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'raviqqe/vim-nonblank'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
 
@@ -121,15 +121,15 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=237
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 au FileType javascript,typescript,python,php,xml,yaml,ruby :RainbowLevelsOn
 let g:rainbow_levels = [
-    \{'ctermbg': 232, 'guibg': '#080808'},
-    \{'ctermbg': 233, 'guibg': '#121212'},
-    \{'ctermbg': 234, 'guibg': '#1c1c1c'},
-    \{'ctermbg': 235, 'guibg': '#262626'},
-    \{'ctermbg': 236, 'guibg': '#303030'},
-    \{'ctermbg': 237, 'guibg': '#3a3a3a'},
-    \{'ctermbg': 238, 'guibg': '#444444'},
-    \{'ctermbg': 239, 'guibg': '#4e4e4e'},
-    \{'ctermbg': 240, 'guibg': '#585858'}]
+      \{'ctermbg': 232, 'guibg': '#080808'},
+      \{'ctermbg': 233, 'guibg': '#121212'},
+      \{'ctermbg': 234, 'guibg': '#1c1c1c'},
+      \{'ctermbg': 235, 'guibg': '#262626'},
+      \{'ctermbg': 236, 'guibg': '#303030'},
+      \{'ctermbg': 237, 'guibg': '#3a3a3a'},
+      \{'ctermbg': 238, 'guibg': '#444444'},
+      \{'ctermbg': 239, 'guibg': '#4e4e4e'},
+      \{'ctermbg': 240, 'guibg': '#585858'}]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Deoplete
@@ -155,7 +155,7 @@ vnoremap <silent> <Leader>cet    :Tabularize /#<CR>
 vnoremap <silent> <Leader>ce     :Tabularize /
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Leader F for file-related mappîngs (open, browse...) 
+" Leader F for file-related mappings (open, browse...)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <Leader>f :CtrlP<CR>
 nnoremap <silent> <Leader>fm :CtrlPMRU<CR>
