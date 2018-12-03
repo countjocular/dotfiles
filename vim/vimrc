@@ -27,6 +27,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'jeetsukumaran/vim-buffergator'
 Plug 'raviqqe/vim-nonblank'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -163,11 +164,11 @@ nnoremap <silent> <Leader>fm :CtrlPMRU<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Leader B for buffer-related mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <Leader>b :CtrlPBuffer<CR> " cycle between buffer
-nnoremap <silent> <Leader>bb :bn<CR> "create (N)ew buffer
-nnoremap <silent> <Leader>bd :bdelete<CR> "(D)elete the current buffer
-nnoremap <silent> <Leader>bu :bunload<CR> "(U)nload the current buffer
-nnoremap <silent> <Leader>bl :setnomodifiable<CR> " (L)ock the current buffer"
+" nnoremap <silent> <Leader>b :CtrlPBuffer<CR> " cycle between buffer
+" nnoremap <silent> <Leader>bb :bn<CR> "create (N)ew buffer
+" nnoremap <silent> <Leader>bd :bdelete<CR> "(D)elete the current buffer
+" nnoremap <silent> <Leader>bu :bunload<CR> "(U)nload the current buffer
+" nnoremap <silent> <Leader>bl :setnomodifiable<CR> "(L)ock the current buffer"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other mappings
