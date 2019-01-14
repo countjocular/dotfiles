@@ -5,26 +5,26 @@ scriptencoding utf-8
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'wincent/terminus' " Enhanced terminal integration
-Plug 'tomtom/tcomment_vim' " Easy comment toggling
-Plug 'morhetz/gruvbox' " Colorscheme
-Plug 'itchyny/lightline.vim' " Statusbar
-Plug 'sheerun/vim-polyglot' " A solid language pack
+Plug 'wincent/terminus'       " Enhanced terminal integration
+Plug 'tomtom/tcomment_vim'    " Easy comment toggling
+Plug 'morhetz/gruvbox'        " Colorscheme
+Plug 'itchyny/lightline.vim'  " Statusbar
+Plug 'sheerun/vim-polyglot'   " A solid language pack
 Plug 'editorconfig/editorconfig-vim' " EditorConfig.org plugin
-Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
-Plug 'Raimondi/delimitMate'
-Plug 'myusuf3/numbers.vim' " Better line number
+Plug 'godlygeek/tabular'      " Vim script for text filtering and alignment
+Plug 'myusuf3/numbers.vim'    " Better line number
+Plug 'tmsvg/pear-tree'        " Auto-pair parentheses, tags, etc
 Plug 'airblade/vim-gitgutter' " shows a git diff in the gutter
 Plug 'hail2u/vim-css3-syntax' " CSS3 for Vim's built-in syntax/css.vim
-Plug 'mhinz/vim-startify' " Fancy start screen
+Plug 'mhinz/vim-startify'     " Fancy start screen
 Plug 'thiagoalessio/rainbow_levels.vim'
-Plug 'osyo-manga/vim-over' " :substitute preview
-Plug 'tpope/vim-endwise' " wisely add 'end' in ruby
+Plug 'osyo-manga/vim-over'    " :substitute preview
+Plug 'tpope/vim-endwise'      " wisely add 'end' in ruby
 Plug 'ryanoasis/vim-devicons' " Filetype glyphs for popular Vim plugins
 Plug 'Chiel92/vim-autoformat' " easy code formatting
-Plug 'w0rp/ale' " Asynchronous linting/fixing
+Plug 'w0rp/ale'               " Asynchronous linting/fixing
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim' " Fuzzy finder
+Plug 'junegunn/fzf.vim'       " Fuzzy finder
 Plug 'jeetsukumaran/vim-buffergator' " Buffer manager
 Plug 'raviqqe/vim-nonblank'
 if has('nvim')
