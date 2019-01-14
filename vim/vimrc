@@ -5,34 +5,32 @@ scriptencoding utf-8
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'wincent/terminus'
-Plug 'tomtom/tcomment_vim'
-Plug 'morhetz/gruvbox'
-Plug 'itchyny/lightline.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'editorconfig/editorconfig-vim'
-"Plug 'vim-syntastic/syntastic'
-Plug 'godlygeek/tabular'
+Plug 'wincent/terminus' " Enhanced terminal integration
+Plug 'tomtom/tcomment_vim' " Easy comment toggling
+Plug 'morhetz/gruvbox' " Colorscheme
+Plug 'itchyny/lightline.vim' " Statusbar
+Plug 'sheerun/vim-polyglot' " A solid language pack
+Plug 'editorconfig/editorconfig-vim' " EditorConfig.org plugin
+Plug 'godlygeek/tabular' " Vim script for text filtering and alignment
 Plug 'Raimondi/delimitMate'
-Plug 'myusuf3/numbers.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'mhinz/vim-startify'
-"Plug 'nathanaelkane/vim-indent-guides'
+Plug 'myusuf3/numbers.vim' " Better line number
+Plug 'airblade/vim-gitgutter' " shows a git diff in the gutter
+Plug 'hail2u/vim-css3-syntax' " CSS3 for Vim's built-in syntax/css.vim
+Plug 'mhinz/vim-startify' " Fancy start screen
 Plug 'thiagoalessio/rainbow_levels.vim'
-Plug 'osyo-manga/vim-over'
-Plug 'tpope/vim-endwise'
-Plug 'ryanoasis/vim-devicons'
-Plug 'Chiel92/vim-autoformat'
-Plug 'w0rp/ale'
+Plug 'osyo-manga/vim-over' " :substitute preview
+Plug 'tpope/vim-endwise' " wisely add 'end' in ruby
+Plug 'ryanoasis/vim-devicons' " Filetype glyphs for popular Vim plugins
+Plug 'Chiel92/vim-autoformat' " easy code formatting
+Plug 'w0rp/ale' " Asynchronous linting/fixing
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'jeetsukumaran/vim-buffergator'
+Plug 'junegunn/fzf.vim' " Fuzzy finder
+Plug 'jeetsukumaran/vim-buffergator' " Buffer manager
 Plug 'raviqqe/vim-nonblank'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/deoplete.nvim' " Asynchronous completion framework
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
