@@ -26,7 +26,8 @@ Plug 'w0rp/ale'               " Asynchronous linting/fixing
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'       " Fuzzy finder
 Plug 'jeetsukumaran/vim-buffergator' " Buffer manager
-Plug 'raviqqe/vim-nonblank'
+Plug 'raviqqe/vim-nonblank'   " Delete trailing whitespace on every write
+Plug 'junegunn/goyo.vim'      " Distraction-free writing
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
