@@ -4,7 +4,6 @@ export GDM_LANG=en_GB.utf8
 source /usr/share/zsh/scripts/zplug/init.zsh
 zplug "wting/autojump", from:github
 zplug "elstgav/branch-manager", from:github
-zplug "Tarrasch/zsh-command-not-found", from:github
 zplug "rutchkiwi/copyzshell", from:github
 zplug "lukechilds/zsh-nvm", from:github
 zplug "lib/completion", from:oh-my-zsh
