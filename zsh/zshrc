@@ -13,9 +13,9 @@ zplug load
 
 export ZSH=/usr/share/oh-my-zsh
 
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel9k"
 
-# Powerlevel9
+# Powerlevel10k - faster fork of Powerlevel9k
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MODE='awesome-fontconfig'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2

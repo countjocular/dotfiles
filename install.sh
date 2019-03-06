@@ -66,7 +66,7 @@ rbenv install 2.4.2
 yaourt -S zsh
 yaourt -S oh-my-zsh-git
 yaourt -S antigen-git
-sudo git clone https://github.com/bhilburn/powerlevel9k.git /usr/share/oh-my-zsh/custom/themes/powerlevel9k
+sudo git clone https://github.com/romkatv/powerlevel10k.git /usr/share/oh-my-zsh/custom/themes/powerlevel10k
 touch ~/.zsh_local
 
 ####################
