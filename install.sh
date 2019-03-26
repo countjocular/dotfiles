@@ -6,26 +6,26 @@
 # Let's make sure we have git installed before we begin
 sudo pacman -Syu git curl
 
-# Install yaourt, for easier pacman/AUR management
-sudo pacman -Syu yaourt
+# Install yay, for easier pacman/AUR management
+sudo pacman -Syu yay
 
 ####################
 # Fonts
 ####################
 # Fira Code: monospaced font with programming ligatures
-yaourt -Syu otf-fira-code
+yay -Syu otf-fira-code
 
 ####################
 # Python + pip
 ####################
-yaourt -Syu pip
+yay -Syu pip
 
 ####################
 # Vim
 ####################
 # Install neovim, and replace vim with nvim
-yaourt -S neovim python2-neovim python-neovim
-yaourt -S neovim-drop-in
+yay -S neovim python2-neovim python-neovim
+yay -S neovim-drop-in
 
 # Install vim-plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -41,7 +41,7 @@ mkdir -p ~/.vim/tmp
 ####################
 
 sudo pip install powerline-status
-yaourt -S tmux
+yay -S tmux
 
 ####################
 # SCM breeze
@@ -51,38 +51,38 @@ git clone git://github.com/scmbreeze/scm_breeze.git ~/.scm_breeze
 ####################
 # Node
 ####################
-yaourt -S nodejs npm # Needed for vim-prettier
+yay -S nodejs npm # Needed for vim-prettier
 
 ####################
 # Ruby
 ####################
-yaourt -S ruby # SCM breeze works better with Ruby installed
-yaourt -S rbenv rbenv-binstubs ruby-build
+yay -S ruby # SCM breeze works better with Ruby installed
+yay -S rbenv rbenv-binstubs ruby-build
 rbenv install 2.4.2
 
 ####################
 # Zsh
 ####################
-yaourt -S zsh
-yaourt -S oh-my-zsh-git
-yaourt -S antigen-git
+yay -S zsh
+yay -S oh-my-zsh-git
+yay -S antigen-git
 sudo git clone https://github.com/romkatv/powerlevel10k.git /usr/share/oh-my-zsh/custom/themes/powerlevel10k
 touch ~/.zsh_local
 
 ####################
 # Autojump
 ####################
-yaourt -S autojump
+yay -S autojump
 
 ####################
 # thefuck
 ####################
-yaourt -S thefuck
+yay -S thefuck
 
 ####################
 # tmux
 ####################
-yaourt -S tmux tmuxinator
+yay -S tmux tmuxinator
 
 ####################
 # Symlinks
