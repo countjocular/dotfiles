@@ -94,6 +94,7 @@ ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 ln -s ~/dotfiles/zsh/zsh_functions ~/.zsh_functions
 ln -s ~/dotfiles/zsh/zsh_aliases ~/.zsh_aliases
 ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/zsh/p10k.zsh ~/.p10k.zsh
 touch ~/.zsh_local
 
 echo "All done!"

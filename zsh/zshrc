@@ -16,11 +16,7 @@ export ZSH=/usr/share/oh-my-zsh
 ZSH_THEME="powerlevel10k/powerlevel9k"
 
 # Powerlevel10k - faster fork of Powerlevel9k
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time history background_jobs)
+source ~/.p10k.zsh
 
 export VISUAL="vim"
 export EDITOR="vim"
