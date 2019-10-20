@@ -1,6 +1,11 @@
 export LANG=en_GB.utf8
 export GDM_LANG=en_GB.utf8
 
+# Enable instant prompt for Powerlevel10k
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 source /usr/share/zsh/scripts/zplug/init.zsh
 zplug "wting/autojump", from:github
 zplug "elstgav/branch-manager", from:github
