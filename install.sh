@@ -67,7 +67,6 @@ yay -S zsh
 yay -S oh-my-zsh-git
 yay -S antigen-git
 sudo git clone https://github.com/romkatv/powerlevel10k.git /usr/share/oh-my-zsh/custom/themes/powerlevel10k
-touch ~/.zsh_local
 
 ####################
 # Autojump
